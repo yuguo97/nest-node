@@ -26,7 +26,7 @@ export class RolesController {
     }
 
     @UseGuards(AuthGuard('jwt'))
-    @Post('get')
+    @Post('getInfo')
     @HttpCode(200)
     async getById(@Body('id') id: number): Promise<IHttpData> {
       const data = await this.rolesService.getById(id);
