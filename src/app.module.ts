@@ -14,7 +14,6 @@ import { AuthModule } from './auth/auth.module';
 import { MenusModule } from './menus/menus.module';
 import { CacheModule } from './cache/cache.module';
 import { RolesModule } from './roles/roles.module'
-import { TimedModule } from './timed/timed.module'
 import { TaskModule } from './task/task.module';
 @Module({
   imports: [
@@ -39,7 +38,6 @@ import { TaskModule } from './task/task.module';
     MenusModule,
     CacheModule,
     RolesModule,
-    TimedModule,
     TaskModule
   ],
 })
