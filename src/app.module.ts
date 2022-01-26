@@ -15,6 +15,8 @@ import { MenusModule } from './menus/menus.module';
 import { CacheModule } from './cache/cache.module';
 import { RolesModule } from './roles/roles.module'
 import { TaskModule } from './task/task.module';
+import { DictionaryModule } from './dictionary/dictionary.module';
+import { ConfigModule } from './config/config.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -38,7 +40,9 @@ import { TaskModule } from './task/task.module';
     MenusModule,
     CacheModule,
     RolesModule,
-    TaskModule
+    TaskModule,
+    DictionaryModule,
+    ConfigModule,
   ],
 })
 export class AppModule {}
