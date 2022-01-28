@@ -56,4 +56,9 @@ export class AuthService {
       }
       return data
     }
+
+
+    async layout() {
+      await this.cacheService.delCache("token")
+  }
 }

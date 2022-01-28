@@ -35,6 +35,7 @@ export class AuthController {
 
   @UseGuards(AuthGuard('jwt'))
   @Post('profile')
+  @HttpCode(200)
   async getUsername(
     @Body('username') username?: string,
     @Body('password') password?: string,
@@ -49,14 +50,17 @@ export class AuthController {
 
   @UseGuards(AuthGuard('jwt'))
   @Get('info')
+  @HttpCode(200)
   async getInfo(): Promise<IHttpData> {
     const data = await this.authService.fetchInfo();
     return new Reluct(200, data, '查询成功', false);
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Post('logout')
-  async getLogout(): Promise<IHttpData> {
+  @Post('layout')
+  @HttpCode(200)
+  async layout(): Promise<IHttpData> {
+    await this.authService.layout();
     return new Reluct(200, '退出成功', '操作成功', false);
   }
 }

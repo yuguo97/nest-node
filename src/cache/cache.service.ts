@@ -33,4 +33,17 @@ export class CacheService {
         if (!data) return;
         return JSON.parse(data);       
     }
+
+
+    //获取值的方法
+    async delCache(key:string) {
+        if(!this.client){
+            await this.getClient();
+        }
+        const data = await this.client.del(key);           
+        if (!data) return;
+        return JSON.parse(data);       
+    }
+
+    
 }
